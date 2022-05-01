@@ -66,12 +66,9 @@
 <figure class="highcharts-figure">
   <div id="container"></div>
   <p class="highcharts-description">
-    This chart shows how symbols and shapes can be used in charts.
-    Highcharts includes several common symbol shapes, such as squares,
-    circles and triangles, but it is also possible to add your own
-    custom symbols. In this chart, custom weather symbols are used on
-    data points to highlight that certain temperatures are warm while
-    others are cold.
+    新冠肺炎疫情肆虐全球兩年多，2021年又有多個變種病毒接連出現，在國內外邊境嚴管下，據交通部觀光局最新統計資料顯示，去年全年來台旅客人數僅14餘萬人次，寫下觀光局自1956年有統計數字以來的歷史最低量；若與2019年來台旅客量最高峰比較，去年減損的觀光收入高達4,400餘億元，嚴重衝擊各觀光相關產業。
+
+    據觀光局統計指出， 2020年1月下旬開始爆發新冠肺炎疫情，但當月來台旅客和出國狀況依然正常，2月才開始減少， 3月後多個國家陸續實施嚴格境管，甚至有的國家為防堵疫情蔓延而實施封城；因此，前年來台旅客主要集中在前三個月，之後每月驟降至僅有數萬人次，全年來台旅客量為2019年的11.6%，只有137.7萬餘人次。
   </p>
 </figure>
 
@@ -84,25 +81,24 @@ Highcharts.chart('container', {
     type: 'spline'
   },
   title: {
-    text: 'Monthly Average Temperature'
+    text: '年度來台旅客人數'
   },
   subtitle: {
-    text: 'Source: WorldClimate.com'
+    text: 'UNWTO.com'
   },
   xAxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    categories: ['2017', '2018', '2019', '2020', '2021' ],
     accessibility: {
       description: 'Months of the year'
     }
   },
   yAxis: {
     title: {
-      text: 'Temperature'
+      text: '來台旅客人數'
     },
     labels: {
       formatter: function () {
-        return this.value + '°';
+        return this.value + '';
       }
     }
   },
@@ -120,37 +116,30 @@ Highcharts.chart('container', {
     }
   },
   series: [{
-    name: 'Tokyo',
+    name: '日本',
     marker: {
       symbol: 'square'
     },
-    data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
-      y: 26.5,
-      marker: {
-        symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
-      },
-      accessibility: {
-        description: 'Sunny symbol, this is the warmest point in the chart.'
-      }
-    }, 23.3, 18.3, 13.9, 9.6]
+    data: [ 28.7, 31.2, 31.9, 4.1, 0.2]
 
-  }, {
-    name: 'London',
+  },
+   {
+    name: '馬來西亞',
     marker: {
       symbol: 'diamond'
     },
-    data: [{
-      y: 3.9,
-      marker: {
-        symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
-      },
-      accessibility: {
-        description: 'Snowy symbol, this is the coldest point in the chart.'
-      }
-    }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-  }]
+    data: [ 25.9, 25.8, 26.1, 4.3, 0]
+  },
+  {
+    name: '台灣',
+    marker: {
+      symbol: 'square'
+    },
+    data: [11.9, 11.1, 11.9, 1.4, 0.1]
+
+  },]
 });
-  
+
 </script>
 
 
